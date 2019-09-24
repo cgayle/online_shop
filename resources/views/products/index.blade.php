@@ -20,16 +20,22 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Details</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Sub Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($products as $product)
             <tr>
-                <td>{{ ++$i }}</td>
-                <td>{{ $product->name }}</td>
-                <td>{{ $product->detail }}</td>
+                <td>{{ $product->title }}</td>
+                <td>{{ $product->description }}</td>
+                <td>{{ $product->category }}</td>
+                <td>{{ $product->sub_category }}</td>
+                <td>{{ $product->price }}</td>
+                <td>{{ $product->quantity }}</td>
                 <td>
                     <form action="{{ route('products.destroy',$product->id) }}" method="POST">
 

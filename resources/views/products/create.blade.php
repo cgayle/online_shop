@@ -37,7 +37,8 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <input type="text" name="description" class="form-control" placeholder="description">
+                    <textarea class="form-control" rows="5" id="comment" name="description"
+                              placeholder="description"></textarea>
                 </div>
             </div>
 
@@ -50,29 +51,35 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Category:</strong>
-                    <input type="text" name="category" class="form-control" placeholder="category">
+                    <select>
+                        <option value="clothing">Clothing, Accessories and Shoes</option>
+                        <option value="beauty">Beauty and fragrances</option>
+                        <option value="books">Books and magazines</option>
+                    </select>
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Sub Category:</strong>
-                    <input type="text" name="sub_category" class="form-control" placeholder="sub_category">
+                    <select>
+                        <option value="shoes">Shoes</option>
+                        <option value="women_clothing">Women's clothing</option>
+                        <option value="men_clothing">Men's clothing</option>
+                    </select>
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Price:</strong>
-                    <input type="text" name="price" class="form-control" placeholder="price">
+                    <input type="number" min="1" step="any" name="price" class="form-control" placeholder="price">
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Quantity:</strong>
-                    <input type="text" name="quantity" class="form-control" placeholder="quantity">
+                    <input type="number" name="quantity" class="form-control" placeholder="quantity">
                 </div>
             </div>
 
