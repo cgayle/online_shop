@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="{{ route('orders.store', ['psave'=>1]) }}" method="POST">
+    <form action="{{ route('orders.store')}}" method="POST">
         @csrf
 
         <div class="row">
@@ -58,7 +58,10 @@
                 </div>
             </div>
 
-            order - {{ $psave  }}
+            <form action="{{ route('showInfo', ['psave'=> 1]) }}" method="POST">
+                <a class="btn btn-info" href="{{ route('showInfo', ['psave'=> 1]) }}">Show</a>
+            </form>
+
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>

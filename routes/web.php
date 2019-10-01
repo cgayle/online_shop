@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::resource('products','ProductController');
 Route::resource('orders','OrderController');
+Route::post('/orders/create', 'OrderController@showInfo')->name('showInfo');
