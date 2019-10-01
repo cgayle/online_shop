@@ -39,8 +39,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'title' => 'required',
+            'description' => 'required',
         ]);
 
         Product::create($request->all());
@@ -81,8 +81,8 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'title' => 'required',
+            'description' => 'required',
         ]);
 
         $product->update($request->all());
@@ -104,4 +104,5 @@ class ProductController extends Controller
         return redirect()->route('products.index')
             ->with('success','Product deleted successfully');
     }
+
 }
