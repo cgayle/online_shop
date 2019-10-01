@@ -9,19 +9,6 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function index()
-    {
-        $orders = Order::latest()->paginate(5);
-
-        return view('orders.index',compact('orders'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -43,7 +30,7 @@ class OrderController extends Controller
     {
         Order::create($request->all());
 
-        return redirect()->route('orders.index')
+        return redirect()->route('orders.create', ['psave' => $request->psave])
             ->with('success','Order created successfully.');
     }
 
