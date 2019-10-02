@@ -49,7 +49,7 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group"> Product
-                    <select name="product">
+                    <select name="product" id="selectedProduct">
                         <option value=""> -- Select One --</option>
                         @foreach ($products as $product)
                             <option value="{{ $product->id }}">{{ $product->title }}</option>
@@ -57,16 +57,49 @@
                     </select>
                 </div>
             </div>
+        </div>
+        
+            <div>
+                <a class="btn btn-info" href="{{ route('show-prod-info', ['psave'=> 1, 'prodId' => 1]) }}">Show</a>
+            </div>
 
-            <form action="{{ route('showInfo', ['psave'=> 1]) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('showInfo', ['psave'=> 1]) }}">Show</a>
-            </form>
+            <br>
 
+            @isset($orderDesc)
+                @foreach ($orderDesc as $orders)
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Price:</strong>
+                                {{ $orders->price }}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Quanity:</strong>
+                                {{ $orders->quantity }}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Description:</strong>
+                                {{ $orders->description }}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <img src="data:image/png;base64,{{ chunk_split(base64_encode($product->image)) }}"
+                                     height="100" width="100">
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endisset
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </div>
+
 
     </form>
 @endsection

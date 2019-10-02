@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Route::resource('products','ProductController');
 Route::resource('orders','OrderController');
-Route::post('/orders/create', 'OrderController@showInfo')->name('showInfo');
+Route::get('/show-prod-info/{psave}/{prodId}', 'OrderController@showInfo')->name('show-prod-info');
